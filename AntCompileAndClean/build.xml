@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<project name="sample" default="test" basedir=".">
+
+   <target name="compile">
+      <mkdir dir="build"/>
+      <javac destdir="build"
+             debug="on">
+         <src path="src"/>
+      </javac>
+   </target>
+
+   <target name="test" depends="compile">
+      <java classname="test.TestSample"
+            classpath="build">  
+          <arg line=""/>
+      </java>
+   </target>
+
+   <target name="clean">
+      <delete dir="build"/>
+   </target>
+
+</project>

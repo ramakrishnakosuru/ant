@@ -1,0 +1,57 @@
+1. Jar		:- Jars a set of files.
+2. Javac	:- Compiles the specified source file(s) within 
+the running (Ant) VM, or in another VM if the fork attribute is 
+specified.
+3. Java		:- Executes a Java class within the running (Ant) VM, 
+or in another VM if the fork attribute is specified.
+4. Copy		:- Copies a file or Fileset to a new file or directory.
+5. Copydir	:- Deprecated. Use the Copy task instead.
+6. Copyfile	:- Deprecated. Use the Copy task instead.
+7. Delete	:- Deletes either a single file, all files and 
+sub-directories in a specified directory, or a set of files 
+specified by one or more FileSets.
+8. Mkdir	:- Creates a directory. Non-existent parent directories 
+are created, when necessary.
+9. Move		:- Moves a file to a new file or directory, or a set(s) 
+of file(s) to a new directory.
+10. Rename	:- Deprecated. Use the Move task instead.
+
+----------
+I) javac		
+destdir		:- Location to store the class files.
+debug		:- Indicates whether source should be compiled with 
+debug information; defaults to off.
+optimize	:- Indicates whether source should be compiled with 
+optimization; defaults to off. Note that this flag is just ignored 
+by Sun's javac starting with JDK 1.3 (since compile-time optimization 
+is unnecessary).
+II) Java
+fork		:- if enabled triggers the class execution in another 
+VM (disabled by default).
+failonerror	:- Stop the buildprocess if the command exits with a 
+returncode other than 0. Default is "false".
+classpath	:- the classpath to use.
+args		:- the arguments for the class that is executed. 
+deprecated, use nested <arg> elements instead.
+III) Delete	
+Deletes either a single file, all files and sub-directories in a 
+specified directory, or a set of files specified by one or more 
+FileSets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<project name="envSample" default="deploy" basedir=".">
+  <!-- Set up the 'env' prefix for environment variables -->
+  <property environment="env"/>
+
+  <!-- Abort the build if TOMCAT_HOME is not set -->
+  <target name="checkTomcatHome" unless="env.TOMCAT_HOME">
+    <fail message="TOMCAT_HOME must be set!"/>
+  </target>
+
+  <target name="compile">
+    <echo>Dummy compile...</echo>
+  </target>
+
+  <!-- Deploy the WAR file to TOMCAT_HOME\webapps -->
+  <target name="deploy" depends="checkTomcatHome,compile">
+    <echo>Deploying to ${env.TOMCAT_HOME}</echo>
+
+    <copy file="myapp.war" todir="${env.TOMCAT_HOME}/webapps"/>
+  </target>
+
+</project>
